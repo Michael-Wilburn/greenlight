@@ -25,16 +25,18 @@ think of the core functionality as being a bit like the Open Movie Database API.
 
 
 ## Skeleton directory structure
+```bash
 .
 ├── bin
 ├── cmd
-│ └── api
-│ └── main.go
+│   └── api
+│       └── main.go
 ├── internal
 ├── migrations
 ├── remote
 ├── go.mod
 └── Makefile
+```
 
 Let’s take a moment to talk through these files and folders and explain the purpose that
 they’ll serve in our finished project.
