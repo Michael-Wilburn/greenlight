@@ -40,7 +40,6 @@ func (app *application) showMovieHandler(w http.ResponseWriter, r *http.Request)
 		CreatedAt: time.Now(),
 		Title:     "Casablanca",
 		Year:      1942,
-		Runtime:   102,
 		Genres:    []string{"drama", "romance", "war"},
 		Version:   1,
 	}
