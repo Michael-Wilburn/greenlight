@@ -35,12 +35,11 @@ func (app *application) errorResponse(w http.ResponseWriter, r *http.Request, st
 	}
 }
 
-
 /*
-	The serverErrorResponse() method will be used our application encounters an
-	unexpected problem at runtime. It logs the detailed error message, then uses the
-	errorResponse() helper to send a 500 Internal Server Error status code and JSON
-	response(containing a generic error message) to the client.
+The serverErrorResponse() method will be used our application encounters an
+unexpected problem at runtime. It logs the detailed error message, then uses the
+errorResponse() helper to send a 500 Internal Server Error status code and JSON
+response(containing a generic error message) to the client.
 */
 func (app *application) serverErrorResponse(w http.ResponseWriter, r *http.Request, err error) {
 	app.logError(r, err)

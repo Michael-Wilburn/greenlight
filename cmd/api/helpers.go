@@ -35,8 +35,7 @@ func (app *application) readIDParam(r *http.Request) (int64, error) {
 }
 
 /*
-Define a writeJSON() helper for sending responses. This takes the destination
-
+	Define a writeJSON() helper for sending responses. This takes the destination
 	http.ResponseWriter, the HTTP status code to send, the data to encode to JSON, and a
 	header map containing any additional HTTP headers we want to include in the response.
 */
