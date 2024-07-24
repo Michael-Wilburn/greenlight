@@ -229,8 +229,8 @@ using them right now, we've set this up to accept the various filter parameters 
 arguments.
 */
 func (m MovieModel) GetAll(title string, genres []string, filters Filters) ([]*Movie, error) {
-	// Construct the SQL query to retrieve all movie records.
-	query := `SELECT id, created_at, title, year, runtime, genres, version FROM movies ORDER BY id`
+	// Update the SQL query to include the filter conditions.
+	query := `SELECT id, created_at, title, year, runtime, genres, version FROM movies WHERE (LOWER(title) = LOWER($1) OR $1 = '') AND (genres @> $2 OR $2 = '{}') ORDER BY id`
 
 	// Create a context with a 3-second timeout.
 	ctx, cancel := context.WithTimeout(context.Background(), 3*time.Second)
@@ -238,7 +238,7 @@ func (m MovieModel) GetAll(title string, genres []string, filters Filters) ([]*M
 
 	// Use QueryContext() to execute the query. This returns a sql.Rows resultset
 	// containing the result.
-	rows, err := m.DB.QueryContext(ctx, query)
+	rows, err := m.DB.QueryContext(ctx, query, title, pq.Array(genres))
 	if err != nil {
 		return nil, err
 	}
