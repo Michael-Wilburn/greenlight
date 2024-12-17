@@ -34,12 +34,4 @@ func (app *application) showMovieHandler(w http.ResponseWriter, r *http.Request)
 		app.logger.Println(err)
 		http.Error(w, "The server encounterd a problem and could not process your request", http.StatusInternalServerError)
 	}
-
-	if err != nil {
-		http.NotFound(w, r)
-		return
-	}
-
-	// Otherwise, interpolate the movie ID in a placeholder response.
-	fmt.Fprintf(w, "Showing movie with ID: %d\n", id)
 }
