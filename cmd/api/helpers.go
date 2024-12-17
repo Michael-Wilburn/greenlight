@@ -22,10 +22,14 @@ func (app *application) readIDParam(r *http.Request) (int64, error) {
 	return id, nil
 }
 
+// Define an envelope type.
+type envelope map[string]interface{}
+
 // Define a writeJSON() helper for sending responses. This takes the destination
 // http.ResponseWriter, the HTTP status code to send, the data to encode to JSON, and a
 // header map containing any additional HTTP headers we want to include in the response.
-func (app *application) writeJSON(w http.ResponseWriter, status int, data interface{}, headers http.Header) error {
+// Change the data parameter to have the type envelope instead of interface{}.
+func (app *application) writeJSON(w http.ResponseWriter, status int, data envelope, headers http.Header) error {
 	// Use the json.MarshalIndent() function so that whitespace is added to the encoded
 	// JSON. Here we use no line prefix ("") and tab indents ("\t") for each element.
 	js, err := json.MarshalIndent(data, "", "\t")
