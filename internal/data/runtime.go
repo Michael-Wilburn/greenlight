@@ -22,5 +22,4 @@ func (r Runtime) MarshalJSON() ([]byte, error) {
 
 	// Convert the quoted string value to a byte slice and return it.
 	return []byte(quotedJSONValues), nil
-
 }
