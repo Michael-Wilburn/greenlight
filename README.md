@@ -44,3 +44,12 @@ during encoding:
 | []byte                                             	| ⇒     	| Base64-encoded JSON string 	|
 
 
+# Triaging the Decode error
+
+| **Error types** | **Reason** |
+|---|---|
+| json.SyntaxError io.ErrUnexpectedEOF | There is a syntax problem with the JSON being decoded. |
+| json.UnmarshalTypeError | A JSON value is not appropriate for the destination Go type. |
+| json.InvalidUnmarshalError | The decode destination is not valid (usually because it is not a  pointer). This is actually a problem with our application code,  not the JSON itself. |
+| io.EOF | The JSON being decoded is empty. |
+
