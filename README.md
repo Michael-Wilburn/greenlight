@@ -7,7 +7,7 @@ Greenlight — a JSON API for retrieving and managing information about movies. 
 | GET        | /v1/movies                | listMoviesHandler  | Show the details of all movies                  |
 | POST       | /v1/movies                | createMovieHandler | Create a new movie                              |
 | GET        | /v1/movies/:id            | showMovieHandler   | Show the details of a specific movie            |
-| PATCH      | /v1/movies/:id            | editMovieHandler   | Update the details of a specific movie          |
+| PUT        | /V1/movies/:id            | updateMovierHandler| Update the details of a specific movie          |  
 | DELETE     | /v1/movies/:id            | deleteMovieHandler | Delete a specific movie                         |
 | POST       | /v1/users                 |                    | Register a new user                             |
 | PUT        | /v1/users/activated       |                    | Activated a specific user                       |
