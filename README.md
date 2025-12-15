@@ -27,6 +27,8 @@ Greenlight — a JSON API for retrieving and managing information about movies. 
 | **PATCH**  	| Use for actions that _partially update_ a resource at a specific URL. It’s OK for the<br>action to be either idempotent or non-idempotent.                                                               	|
 | **DELETE** 	| Use for actions that _delete_ a resource at a specific URL.                                                                                                                                              	|
 
+
+
 # JSON Encoding
 The following table summarizes how different Go types are mapped to JSON data types
 during encoding:
@@ -44,6 +46,7 @@ during encoding:
 | []byte                                             	| ⇒     	| Base64-encoded JSON string 	|
 
 
+
 # Triaging the Decode error
 
 | **Error types** | **Reason** |
@@ -53,3 +56,14 @@ during encoding:
 | json.InvalidUnmarshalError | The decode destination is not valid (usually because it is not a  pointer). This is actually a problem with our application code,  not the JSON itself. |
 | io.EOF | The JSON being decoded is empty. |
 
+
+
+# Creating a custom logger
+
+| Key | Description |
+|---|---|
+| level | A code indicating the severity of the log entry. In this project we will use the following three severity levels, ordered from least to most severe: - INFO (least severe) - ERROR - FATAL (most severe) |
+| time | The UTC time that the log entry was made with second precision. |
+| message | A string containing the free-text information or error message. |
+| properties | Any additional information relevant to the log entry in string key/value pairs (optional). |
+| trace | A stack trace for debugging purposes (optional). |
