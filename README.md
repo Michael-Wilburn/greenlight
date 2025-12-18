@@ -67,3 +67,5 @@ during encoding:
 | message | A string containing the free-text information or error message. |
 | properties | Any additional information relevant to the log entry in string key/value pairs (optional). |
 | trace | A stack trace for debugging purposes (optional). |
+
+$ migrate create -seq -ext=.sql -dir=./migrations create_users_table
