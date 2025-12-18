@@ -68,4 +68,10 @@ during encoding:
 | properties | Any additional information relevant to the log entry in string key/value pairs (optional). |
 | trace | A stack trace for debugging purposes (optional). |
 
+
+# Setting up the Users Database Table
+
 $ migrate create -seq -ext=.sql -dir=./migrations create_users_table
+
+$ migrate -path=./migrations -database=$GREENLIGHT_DB_DSN up
+
