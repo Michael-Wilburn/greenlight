@@ -65,10 +65,10 @@ func (app *application) registerUserHandler(w http.ResponseWriter, r *http.Reque
 	app.background(func() {
 		// Send the welcome email.
 		err = app.mailer.Send(user.Email, "user_welcome.tmpl", user)
+		// Importantly, if there is an error sending the email then we use the
+		// app.logger.PrintError() helper to manage it, instead of the
+		// app.serverErrorResponse() helper like before.
 		if err != nil {
-			// Importantly, if there is an error sending the email then we use the
-			// app.logger.PrintError() helper to manage it, instead of the
-			// app.serverErrorResponse() helper like before.
 			app.logger.PrintError(err, nil)
 		}
 	})
