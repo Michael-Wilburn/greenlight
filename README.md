@@ -10,7 +10,7 @@ Greenlight — a JSON API for retrieving and managing information about movies. 
 | PUT        | /V1/movies/:id            | updateMovierHandler| Update the details of a specific movie          |  
 | DELETE     | /v1/movies/:id            | deleteMovieHandler | Delete a specific movie                         |
 | POST       | /v1/users                 | registerUserHandler| Register a new user                             |
-| PUT        | /v1/users/activated       |                    | Activated a specific user                       |
+| PUT        | /v1/users/activated       | activateUserHandler| Activated a specific user                       |
 | PUT        | /v1/users/password        |                    | Update the password for a specific user         |
 | POST       | /v1/tokens/authentication |                    | Generate a new authentication token             |
 | POST       | /v1/tokens/password-reset |                    | Generate a new password-reset token             |
