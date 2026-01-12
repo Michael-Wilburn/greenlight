@@ -1,20 +1,20 @@
 # Greenlight
 Greenlight — a JSON API for retrieving and managing information about movies. You can think of the core functionality as being a bit like the Open Movie Database API.
 
-| **Method** | **URL Pattern**           | **Handler**        | **Action**                                      |
-|------------|---------------------------|--------------------|-------------------------------------------------|
-| GET        | /v1/healthcheck           | healthcheckHandler | Show application health and version information |
-| GET        | /v1/movies                | listMoviesHandler  | Show the details of all movies                  |
-| POST       | /v1/movies                | createMovieHandler | Create a new movie                              |
-| GET        | /v1/movies/:id            | showMovieHandler   | Show the details of a specific movie            |
-| PUT        | /V1/movies/:id            | updateMovierHandler| Update the details of a specific movie          |  
-| DELETE     | /v1/movies/:id            | deleteMovieHandler | Delete a specific movie                         |
-| POST       | /v1/users                 | registerUserHandler| Register a new user                             |
-| PUT        | /v1/users/activated       | activateUserHandler| Activated a specific user                       |
-| PUT        | /v1/users/password        |                    | Update the password for a specific user         |
-| POST       | /v1/tokens/authentication |                    | Generate a new authentication token             |
-| POST       | /v1/tokens/password-reset |                    | Generate a new password-reset token             |
-| GET        | /debug/vars               |                    | Display application metrics                     |
+| **Method** | **URL Pattern**           | **Handler**                      | **Action**                                      |
+|------------|---------------------------|----------------------------------|-------------------------------------------------|
+| GET        | /v1/healthcheck           | healthcheckHandler               | Show application health and version information |
+| GET        | /v1/movies                | listMoviesHandler                | Show the details of all movies                  |
+| POST       | /v1/movies                | createMovieHandler               | Create a new movie                              |
+| GET        | /v1/movies/:id            | showMovieHandler                 | Show the details of a specific movie            |
+| PUT        | /V1/movies/:id            | updateMovierHandler              | Update the details of a specific movie          |  
+| DELETE     | /v1/movies/:id            | deleteMovieHandler               | Delete a specific movie                         |
+| POST       | /v1/users                 | registerUserHandler              | Register a new user                             |
+| PUT        | /v1/users/activated       | activateUserHandler              | Activated a specific user                       |
+| PUT        | /v1/users/password        |                                  | Update the password for a specific user         |
+| POST       | /v1/tokens/authentication | createAuthenticationTokenHandler | Generate a new authentication token             |
+| POST       | /v1/tokens/password-reset |                                  | Generate a new password-reset token             |
+| GET        | /debug/vars               |                                  | Display application metrics                     |
 
 
 # HTTP Verbs in REST API
